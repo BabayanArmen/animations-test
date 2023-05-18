@@ -1,46 +1,53 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-banner-carousel',
   templateUrl: './banner-carousel.component.html',
   styleUrls: ['./banner-carousel.component.scss']
 })
-export class BannerCarouselComponent implements OnInit {
-
-  n: number = 0;
-
-  @ViewChild('carousel', {static: false}) elementRef!: ElementRef;
-  @ViewChild('dots', {static: false}) elementRef1!: ElementRef;
+export class BannerCarouselComponent implements OnInit, OnDestroy {
+  @ViewChild('container') containerEl!: ElementRef;
+  private currentIndex: number = 0;
+  public images = [
+    {
+      src: "../../../assets/banners/1.png"
+    },
+    {
+      src: "../../../assets/banners/2.png"
+    },
+    {
+      src: "../../../assets/banners/3.png"
+    },
+  ];
+  inetrval: any;
 
   constructor() { }
 
   ngOnInit() {
-    setInterval(() => {
-      this.next()
-    }, 2000);
+    // this.inetrval = setInterval(() => {
+    //   this.next()
+    // }, 2000);
   }
 
-  next() {
-    this.showSlide(this.n);
-    if ((this.n + 1) > 9 ) {this.n = 0; } else { this.n++; }
-  }
-
-  prev() {
-    this.showSlide(this.n);
-    if ((this.n - 1 ) < 0) {this.n = 9; } else { this.n--; }
-  }
-
-  showSlide(n: any) {
-    // console.log(this.elementRef1);
-
-    for (let i = 0; i < 10; i++) {
-      if (i === n) {
-        this.elementRef.nativeElement.children[i].style.display = 'block';
-        this.elementRef1.nativeElement.children[i].style.backgroundColor = 'darkslategrey';
-      } else { this.elementRef.nativeElement.children[i].style.display = 'none';
-        this.elementRef1.nativeElement.children[i].style.backgroundColor = 'white';
-      }
+  public next() {
+    if(this.currentIndex === this.images.length) {
+      this.currentIndex = 0;
+    } else {
+      this.currentIndex++;
     }
+    this.containerEl.nativeElement.children[this.currentIndex].scrollIntoView({behavior: "smooth"});
   }
 
+  public prev() {
+    if(this.currentIndex === 0) {
+      this.currentIndex = this.images.length-1;
+    } else {
+      this.currentIndex--;
+    }
+    this.containerEl.nativeElement.children[this.currentIndex].scrollIntoView({behavior: "smooth"})
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.inetrval);
+  }
 }

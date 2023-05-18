@@ -1,69 +1,10 @@
-<div class="carousel" #carousel>
-
-  <div class="slide1" >
-    <img src="../../assets/pics/1.jpg" alt="" >
-    <div class="text">Mercedes 1</div>
+<div #container class="container">
+  <div [ngStyle]="{'background-image': 'url(' + image.src + ')'}" class="hero-image" *ngFor="let image of images; let i = index">
+    <div class="dots">
+      <div *ngFor="let dot of images" class="dot"></div>
+    </div>
   </div>
-
-  <div class="slide2" >
-    <img src="../../assets/pics/2.jpg" alt="">
-    <div class="text">Mercedes 2</div>
-  </div>
-
-  <div class="slide3" >
-    <img src="../../assets/pics/3.jpg" alt="">
-    <div class="text">Mercedes 3</div>
-  </div>
-
-  <div class="slide4" >
-    <img src="../../assets/pics/4.jpg" alt="">
-    <div class="text">Mercedes 4</div>
-  </div>
-
-  <div class="slide5" >
-    <img src="../../assets/pics/5.jpg" alt="">
-    <div class="text">Mercedes 5</div>
-  </div>
-
-  <div class="slide6" >
-    <img src="../../assets/pics/6.jpg" alt="">
-    <div class="text">Mercedes 6</div>
-  </div>
-
-  <div class="slide7" >
-    <img src="../../assets/pics/7.jpg" alt="">
-    <div class="text">Mercedes 7</div>
-  </div>
-
-  <div class="slide8" >
-    <img src="../../assets/pics/8.jpg" alt="">
-    <div class="text">Mercedes 8</div>
-  </div>
-
-  <div class="slide9" >
-    <img src="../../assets/pics/9.jpg" alt="">
-    <div class="text">Mercedes 9</div>
-  </div>
-
-  <div class="slide10" >
-    <img src="../../assets/pics/10.jpg" alt="">
-    <div class="text">Mercedes 10</div>
-  </div>
-
-  <a class="prev" (click)="prev()">&#10094;</a>
-  <a class="next" (click)="next()">&#10095;</a>
-
-  <div class="dots" #dots>
-    <span class="dot" (click)="showSlide(0)" ></span>
-    <span class="dot" (click)="showSlide(1)" ></span>
-    <span class="dot" (click)="showSlide(2)" ></span>
-    <span class="dot" (click)="showSlide(3)" ></span>
-    <span class="dot" (click)="showSlide(4)" ></span>
-    <span class="dot" (click)="showSlide(5)" ></span>
-    <span class="dot" (click)="showSlide(6)" ></span>
-    <span class="dot" (click)="showSlide(7)" ></span>
-    <span class="dot" (click)="showSlide(8)" ></span>
-    <span class="dot" (click)="showSlide(9)" ></span>
-  </div>
-
 </div>
+
+<button (click)="prev()">-</button>
+<button (click)="next()">+</button>

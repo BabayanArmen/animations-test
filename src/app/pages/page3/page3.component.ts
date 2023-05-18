@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page3.component.scss']
 })
 export class Page3Component implements OnInit {
+  public items = [1, 2, 3, 4, 5, 6, 7, 8]
 
   constructor() { }
 

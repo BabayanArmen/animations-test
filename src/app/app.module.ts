@@ -8,6 +8,10 @@ import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
 import { Page3Component } from './pages/page3/page3.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { Rope2Component } from './pages/rope2/rope2.component';
+import { CaruselComponent } from './pages/page3/carusel/carusel.component';
+import { CaruselBlockComponent } from './pages/page3/carusel-block/carusel-block.component';
+import { BannerCarouselComponent } from './pages/banner-carousel/banner-carousel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
     Page1Component,
     Page2Component,
     Page3Component,
-    NavbarComponent
+    NavbarComponent,
+    Rope2Component,
+    CaruselComponent,
+    CaruselBlockComponent,
+    BannerCarouselComponent
   ],
   imports: [
     BrowserModule,

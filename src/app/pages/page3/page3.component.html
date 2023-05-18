@@ -1,2 +1,8 @@
-<p>page3 works!</p>
-<div class="content"></div>
+<!-- <p>page3 works!</p> -->
+<!-- <div class="content"></div> -->
+
+<app-carusel>
+  <div #carouselItems class="carulsel-items">
+    <app-carusel-block *ngFor="let item of items"></app-carusel-block>
+  </div>
+</app-carusel>

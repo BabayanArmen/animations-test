@@ -35,7 +35,8 @@ export class BannerCarouselComponent implements OnInit, OnDestroy {
     } else {
       this.currentIndex++;
     }
-    this.containerEl.nativeElement.children[this.currentIndex].scrollIntoView({behavior: "smooth"});
+    // this.containerEl.nativeElement.children[this.currentIndex].scrollIntoView({behavior: "smooth"});
+    this.containerEl.nativeElement.children[this.currentIndex].scrollLeft()
   }
 
   public prev() {

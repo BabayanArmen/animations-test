@@ -1,16 +1,13 @@
-.rope-wrapper{
-  // position: fixed;
-  // right: 0;
-  // top: 0;
-  width: 100px;
+.rope-wrapper {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 100vh;
-  // height: 0px;
   overflow: hidden;
-  .rope-div {
+  .rope{
     background-image: url(../../../assets/img/rope_animation.png);
-    background-position: right;
-    height: 100vh;
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
   }
 }

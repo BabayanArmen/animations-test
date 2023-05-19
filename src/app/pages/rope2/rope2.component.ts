@@ -19,7 +19,7 @@ export class Rope2Component implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.ropeEl.nativeElement.style.height = this.document.body.offsetHeight + "px";
+      // this.ropeEl.nativeElement.style.height = this.document.body.offsetHeight + "px";
     }
   }
 

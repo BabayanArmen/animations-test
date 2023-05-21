@@ -1,3 +1,9 @@
 <div #ropeWrapper class="rope-wrapper">
-  <div #rope class="rope"></div>
+  <div #rope class="rope" *ngFor="let r of ropes; let i = index">
+    <div class="buttons" *ngIf="i === 0">
+      <button class="button-1 button-scale-animation">1</button>
+      <button *ngIf="showButton2" class="button-2 button-scale-animation">2</button>
+      <button *ngIf="showButton3" class="button-3 button-scale-animation">3</button>
+    </div>
+  </div>
 </div>

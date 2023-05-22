@@ -4,8 +4,9 @@
   right: 0;
 
   width: 437px;;
-  height: 100vh;
   overflow: hidden;
+  animation-name: rope-init-animation;
+  animation-duration: 2s;
   .rope{
     width: 437px;
     height: 7199px;
@@ -55,10 +56,16 @@
 
 .button-scale-animation{
   animation-name: scale-animation;
-  animation-duration: 2s
+  animation-duration: 3s
 }
 
 @keyframes scale-animation {
   from {scale: 0}
   to {scale: 1}
+}
+
+
+@keyframes rope-init-animation{
+  from {height: 0}
+  to {height: 100vh;}
 }

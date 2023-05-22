@@ -23,7 +23,9 @@ export class Rope2Component implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     // if (isPlatformBrowser(this.platformId)) {
-    //   // this.rope.nativeElement.style.height = this.document.body.offsetHeight + "px";
+    //   setTimeout(() => {
+    //     // this.rope.nativeElement.style.height = this.document.body.offsetHeight + "px";
+    //   }, 2000)
     // }
   }
 
@@ -33,17 +35,18 @@ export class Rope2Component implements OnInit, AfterViewInit {
       let scrolledSize = window.scrollY  // document.documentElement.scrollTop
       let viewportHeight = document.documentElement.clientHeight // window.innerHeight
       let documentHeight = document.body.offsetHeight;
-  
+
       let scrollbarThumbRatio = viewportHeight / documentHeight;
       let scrollbarThumbSize = scrollbarThumbRatio * viewportHeight;
-  
+
+      if(scrolledSize + viewportHeight + scrollbarThumbSize > 7199) this.ropes.push("rope");
+
       setTimeout(() => {
-        if(scrolledSize + viewportHeight + scrollbarThumbSize > 7199) this.ropes.push("rope");
         this.ropeWrapper.nativeElement.style.height = this.document.documentElement.clientHeight + scrolledSize + "px";
 
-        this.showButton2 = scrolledSize + viewportHeight + scrollbarThumbSize > 765; 
+        this.showButton2 = scrolledSize + viewportHeight + scrollbarThumbSize > 765;
         this.showButton3 = scrolledSize + viewportHeight + scrollbarThumbSize > 1500;
-        
+
       }, 500)
     }
   }

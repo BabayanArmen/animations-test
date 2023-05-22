@@ -12,6 +12,8 @@ import { Rope2Component } from './pages/rope2/rope2.component';
 import { CaruselComponent } from './pages/page3/carusel/carusel.component';
 import { CaruselBlockComponent } from './pages/page3/carusel-block/carusel-block.component';
 import { BannerCarouselComponent } from './pages/banner-carousel/banner-carousel.component';
+import { RopeMobileComponent } from './pages/rope-mobile/rope-mobile.component';
+import { RopeVerticalComponent } from './pages/rope-vertical/rope-vertical.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BannerCarouselComponent } from './pages/banner-carousel/banner-carousel
     Rope2Component,
     CaruselComponent,
     CaruselBlockComponent,
-    BannerCarouselComponent
+    BannerCarouselComponent,
+    RopeMobileComponent,
+    RopeVerticalComponent
   ],
   imports: [
     BrowserModule,

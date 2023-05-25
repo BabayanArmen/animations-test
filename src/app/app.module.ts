@@ -14,6 +14,8 @@ import { CaruselBlockComponent } from './pages/page3/carusel-block/carusel-block
 import { BannerCarouselComponent } from './pages/banner-carousel/banner-carousel.component';
 import { RopeMobileComponent } from './pages/rope-mobile/rope-mobile.component';
 import { RopeVerticalComponent } from './pages/rope-vertical/rope-vertical.component';
+import { InputComponent } from './pages/input/input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { RopeVerticalComponent } from './pages/rope-vertical/rope-vertical.compo
     CaruselBlockComponent,
     BannerCarouselComponent,
     RopeMobileComponent,
-    RopeVerticalComponent
+    RopeVerticalComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
